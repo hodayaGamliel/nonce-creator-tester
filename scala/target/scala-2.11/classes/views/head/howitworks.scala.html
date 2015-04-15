@@ -1,0 +1,72 @@
+<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/howitworks/howitworks.css")"/>
+
+<script src="@routes.Assets.at("javascripts/howitworks/bootstrap-scrollspy.js")" type="text/javascript"></script>
+<script src="@routes.Assets.at("javascripts/howitworks/jquery.textPlaceholder.js")" type="text/javascript"></script>
+<script src="@routes.Assets.at("javascripts/howitworks/jquery.poshytip.js")" type="text/javascript"></script>
+<script src="@routes.Assets.at("javascripts/howitworks/jquery-ui-tabs.js")" type="text/javascript"></script>
+
+<script>
+	$(document).ready(function(){
+		var activeOffset;
+		$('.about .info-tabs').tabs({
+			show: {
+				effect: "fade",
+				duration: 800
+			},
+			create: function(event, ui){
+				$('<li class="rule"/>').prependTo($('.about .nav-tabs'));
+				$('.about .nav-tabs li').each(function(){
+					var this_ =$(this);
+					if(this_.hasClass('ui-state-active')){
+						activeOffset = this_.position().left;
+					};
+				});
+			},
+			activate:function(event,ui){
+				$('.about .nav-tabs li').each(function(){
+					var this_ =$(this);
+					if(this_.hasClass('ui-state-active')){
+						activeOffset = this_.position().left;
+					};
+				});
+				console.log(activeOffset);
+			}
+		});
+		$('.about .nav-tabs li').each(function(){
+			var this_ =$(this),
+				offset_ = this_.position().left,
+				rule_ = this_.siblings('.rule'),
+				index_ = this_.index();
+			if(offset_ == 0){
+				this_.addClass('first')
+			};
+			if(offset_ == 0){
+				rule_.addClass('left');
+			};
+			this_.click(function(){
+				rule_.css({
+					left: offset_ 
+				});
+				if(offset_ == 0){
+					rule_.removeClass('right').addClass('left');
+				}else if(this_.is(':last-child')){
+					rule_.removeClass('left').addClass('right');
+				}else{
+					rule_.removeClass('left').removeClass('right');
+				};
+			});
+			
+		});
+		
+		$('.about .info-tabs .descr').append('<span class="line"></span>');
+		
+		$('.about .info-tabs .descr-list').each(function(){
+			var i=0;
+			$(this).find('.descr').each(function(){
+				i++
+				var this_ = $(this);
+				$('<span class="num">' + i + '.</span>').prependTo(this_);
+			});
+		});
+	});
+</script>

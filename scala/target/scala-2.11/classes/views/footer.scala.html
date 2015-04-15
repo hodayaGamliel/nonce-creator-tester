@@ -1,0 +1,88 @@
+@(topBoarder: Boolean, isLandingPage: Boolean = false)
+
+<div id="footer"  @if(!topBoarder) {
+	style="border-top:none;"
+	}>
+	@if( !isLandingPage ){
+	<div class="footerHolder slimSiteCentered">
+		<div class="footerController">
+			<div class="blocksHolder">
+				<div class="block">
+					<h3>Product</h3>
+					<ul>
+						<li><a id="footer-product-how-it-works" class="underlinelink" href="@routes.BlueSite.howitworks">How it Works</a></li>
+						<li><a id="footer-product-product-error-analysis" class="underlinelink" href="@routes.BlueSite.product#error-analysis">Error Analysis</a></li>
+						<li><a id="footer-product-product-detection-priority" class="underlinelink" href="@routes.BlueSite.product#engineering-dashboard">Detection and priority</a></li>
+						<li><a id="footer-product-product-workflow-integration" class="underlinelink" href="@routes.BlueSite.product#workflow">Workflow Integration</a></li>
+						<li><a id="footer-product-logs" class="underlinelink" href="@routes.BlueSite.product#smarter-logs">Smarter Logs</a></li>
+						<li><a id="footer-product-security" class="underlinelink" href="@routes.BlueSite.security">Security</a></li>
+						<li><a id="footer-product-features-performance" class="underlinelink" href="@routes.BlueSite.howitworks#performance">Performance</a></li>
+					</ul>
+				</div>
+				<div class="block">
+					<h3>Solutions</h3>
+					<ul>
+						<li><a id="footer-solutions-role-developer" class="underlinelink" href="@routes.BlueSite.whytakipi#developer">Developer</a></li>
+						<li><a id="footer-solutions-role-devops" class="underlinelink" href="@routes.BlueSite.whytakipi#devops">DevOps</a></li>
+						<li><a id="footer-solutions-role-engineering-manager" class="underlinelink" href="@routes.BlueSite.whytakipi#engineering-manager">Engineering Manager</a></li>
+						<li><a id="footer-solutions-role-executive" class="underlinelink" href="@routes.BlueSite.whytakipi#executive">Executive</a></li>
+						<li><a id="footer-solutions-technology-scala" class="underlinelink" href="@routes.BlueSite.scala">Scala</a></li>
+						<li><a id="footer-solutions-technology-newrelic" class="underlinelink" href="@routes.Application.newrelicnew">New Relic</a></li>
+					</ul>
+				</div>
+				<div class="block">
+					<h3>Company</h3>
+					<ul>
+						<li><a id="footer-company-aboutus" class="underlinelink" href="@routes.Application.about">About Us</a></li>
+						<li><a id="footer-company-blog" class="underlinelink" href="@globals.TAKIPI_BLOG" target="_blank">Blog</a></li>
+						<li><a id="footer-company-jobs" class="underlinelink" href="@routes.Application.jobs">Jobs</a></li>
+						<li><a id="footer-company-monsters" class="underlinelink" href="@routes.Application.monsters">Monsters</a></li>
+					</ul>
+				</div>
+				<div class="block">
+					<h3>Help</h3>
+					<ul>
+						<li><a id="footer-help-docs" class="underlinelink" href="@globals.TAKIPI_SUPPORT_SITE" target="_blank">Docs</a></li>
+						<li><a id="footer-help-installation" class="underlinelink" href="@globals.TAKIPI_SUPPORT_SITE/installation" target="_blank">Installation</a></li>
+						<li><a id="footer-help-connecting-tapiki" class="underlinelink" href="@globals.TAKIPI_SUPPORT_SITE/connecting-takipi" target="_blank">Connecting Takipi</a></li>
+						<li><a id="footer-help-schedule-demo" class="underlinelink" href="@routes.BlueSite.schedule_demo">Schedule a demo</a></li>
+						<li><a id="footer-help-mail" class="underlinelink" href="@globals.HELLO_MAILTO">@globals.HELLO_MAIL</a></li>
+						<li><a id="footer-help-tos" class="underlinelink" href="@routes.Application.terms" target="_blank">Terms of service</a></li>
+					</ul>
+				</div>
+				<div class="block">
+					<h3>Who said developers aren't social?</h3>
+					<ul class="socialList">
+						<li><a id="footer-social-facebook" href="http://www.facebook.com/takipi" class="facebook" target="_blank"></a></li>
+						<li><a id="footer-social-twitter" href="http://www.twitter.com/takipid" class="twitter" target="_blank"></a></li>
+						<li><a id="footer-social-dog" href="javascript: void(0)" class="dog"></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+    }
+	<div class="footerBottom">
+		<ul>
+			<li>By Takipi, Inc. 2015</li>
+			<li>Contact us: <a class="underlinelink" href="@globals.HELLO_MAILTO">@globals.HELLO_MAIL</a></li>
+			<li>1-800-324-3053</li>
+		</ul>
+	</div>
+</div>
+<div id="dogPopup" class="socialPopup">
+	<a class="socialPopupClose" href="javascript: void(0)"></a>
+	<div class="socialPopupHolder">
+		<div class="socialPopupHeader"></div>
+		<img src="@routes.Assets.at("images/takipi-dogs.jpg")" alt="Taki and Kipi" width="476" height="315"/>
+	</div>
+</div>
+<div id="youtubePopup">
+	<iframe id="ytPlayer" width="640" height="420" src="//www.youtube.com/embed/@globals.DEMO_VIDEO?vq=hd720&enablejsapi=1&origin=@globals.SITE_ORIGIN" frameborder="0" allowfullscreen></iframe>
+</div>
+<div id="screenshotsPopup">
+	<a class="close" href="javascript: void(0)"></a>
+</div>
+<div id="officeImagePopup">
+	<a class="close" href="javascript: void(0)"></a>
+</div>

@@ -1,0 +1,24 @@
+@(showInstallWizard: Boolean = false)
+<div class="bottom-form">
+	<div class="container">
+		<header>
+			<h2>Simple installation</h2>
+			<p>Takipi installs in minutes as a simple Java agent.</p>
+			<p>No code changes, annotations, dependencies, or build configurations needed.</p>
+			<p>Linux, OS X, and Windows. Java 6-8.</p>
+		</header>
+	</div>
+	@if(showInstallWizard) {
+		@bluesite.installationwizard()
+	}
+	<div id="start-area" class="start-form takipiMiniSignupForm">
+		<form action="#">
+			<div class="row">
+				<input class="text emailInput" type="email" placeholder="Email address">
+				<input class="btn-submit createStubAccountBtn" type="submit" value="Start using Takipi &#62;&#62;" >
+			</div>
+			<div class="errorLabel">User already exists <a class="loginLink" href="@globals.LOGIN_PAGE">Log in</a></div>
+			<p>Java / Scala</p>
+		</form>
+	</div><!-- end start-form -->
+</div><!-- bottom-form -->

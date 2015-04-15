@@ -1,0 +1,164 @@
+<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/features/features.css")"/>
+
+<script src="@routes.Assets.at("javascripts/features/bootstrap-scrollspy.js")" type="text/javascript"></script>
+<script src="@routes.Assets.at("javascripts/features/jquery.textPlaceholder.js")" type="text/javascript"></script>
+<script src="@routes.Assets.at("javascripts/features/jquery.poshytip.js")" type="text/javascript"></script>
+
+<script>
+	$(document).ready(function(){
+		
+		$('.features-area .visual .link').click(function() {
+			$(this).hide();
+			$('.features-area .visual .img-02').fadeIn();
+		return false;
+		});
+		
+		$('[placeholder]').textPlaceholder();
+		
+		$('.analysis-form a.btn-submit').click(function() {
+			$.ajax({
+				type: "POST",
+				url: "https://app.takipi.com/app/notifyslowdownbeta",
+				data: $('.analysis-form input.txt').val()})
+				.success(function(data)
+				{
+					if (data == "true") {
+						$('.input-div').hide();
+						$('#learnMoreHeaderSpan').text("Done! We'll be in touch.");
+					}
+				})
+				.error(function(data)
+				{
+					console.log(data);
+				});
+			
+			return false;
+		});
+		
+		var $target = $('.features-area').find('.detect');
+		
+		if ($target.length > 0)
+		{
+			(function() {
+				setTimeout(function() {
+					var $bubble = $target.find('.bubble'),
+						topOffset = $target.offset().top,
+						allowAnimation = true;
+					
+					$(window).scroll(function() {
+						var tmp = $(window).scrollTop();
+						
+						if (tmp >= topOffset) {
+							if (allowAnimation) {
+								allowAnimation = false;
+								$bubble.animate({
+									'opacity': 1,
+									'margin-bottom': 200
+								});
+							}
+						}
+						else {
+							if (!allowAnimation) {
+								allowAnimation = true;
+								$bubble.animate({
+									'opacity': 0,
+									'margin-bottom': 0
+								});
+							}
+						}
+					});
+					
+					$('.features-area').find('.visual').find('.img-02').hide();
+				}, 400);
+			})();
+		}
+		
+		$('.features-area').find('.monitoring-info').find('.item').each(function(){
+			var alignHor = ($(this).is('.left')) ? 'left' : 'right';
+			
+			$(this).poshytip({
+				className: 'monitor-tip',
+				showOn: 'hover',
+				alignTo: 'target',
+				alignX: alignHor,
+				alignY: 'center',
+				offsetX: 20,
+				keepInViewport: true,
+				allowTipHover: true,
+				content:function(){
+					var tmp = $(this).find('.pop-info').clone();
+					return tmp;
+				}
+			});
+		});
+		
+		$('.tech-holder .video-area .play-btn').click(function(){
+			$(this).hide();
+			var scroll_pos_test = $('.tech-holder .video-area').offset().top;
+			$('html, body').stop().animate({ 
+				scrollTop: scroll_pos_test
+			}, 600);
+			$('.tech-holder .video-area .image').fadeOut(300, function(){
+				$('.tech-holder .video-area video').show();
+				$('.tech-holder .video-area video').get(0).play();
+			});
+			return false
+		});
+		
+		var videoEl = document.getElementById("demo-video");
+		
+		if (videoEl)
+		{
+			var wasInView = false;
+			
+			var restartVideo = function() {
+				videoEl.load();
+				videoEl.play();
+			};
+			
+			var checkPositionAndPlay = function()
+			{
+				if (wasInView)
+				{
+					return;
+				}
+				
+				var windowScroll = $(window).scrollTop();
+				var windowHeight = $(window).height();
+				var movieOffset = $("#demo-video").offset();
+				
+				if (windowHeight + windowScroll > movieOffset.top)
+				{
+					wasInView = true;
+					restartVideo();
+				}
+			}
+			
+			$(window).scroll(function() {
+				checkPositionAndPlay();
+			});
+			
+			videoEl.onended = restartVideo;
+			videoEl.play();
+		}
+		
+		var timeEl = $("#errorAnalysisTime");
+		
+		if (timeEl.length > 0)
+		{
+			var updateTime = function() {
+				var now = new Date()
+				now.setTime(now.getTime() + (60 * 1000 * 10));
+				var minutes = now.getMinutes();
+				minutes = minutes < 10 ? "0" + minutes : minutes;
+				var hours = now.getHours() > 12 ? now.getHours() % 12 : now.getHours();
+				var ampm = now.getHours() > 11 ? "pm" : "am";
+				timeEl.text(hours + ":" + minutes + ampm);
+			}
+			
+			updateTime();
+			
+			setInterval(updateTime, 1000 * 60);
+		}
+	});
+</script>

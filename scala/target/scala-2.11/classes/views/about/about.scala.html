@@ -1,0 +1,111 @@
+@import scala.util.Random
+
+<div class="backgroundFiller"></div>
+<div id="aboutUsMain" class="subPageMain siteCentered">
+	<div class="content styled">
+		<div class="header">
+			<div class="title">About Us</div>
+		</div>
+		<div class="coFoundersBox aboutBox">
+			<code class="boxHeader">
+				takipi.add(<span class="value">"Founders"</span>);
+			</code>
+			<div class="coFoundersList1">
+				@cofounder(
+					"tal",
+					"tal.weiss@takipi.com",
+					"http://il.linkedin.com/in/talws",
+					null,
+					null,
+					"Tal Weiss",
+					"CEO",
+					"Tal is the CEO at Takipi, responsible for overseeing the company's strategy and operations. Previously, Tal was co-founder and CEO at VisualTao, a Sequoia backed start-up which was acquired by Autodesk in 2009. Following the acquisition, Tal served as the Director responsible for product management, development and social marketing for Autodesk's flagship web and mobile product line used by millions of professional users worldwide. Prior to co-founding VisualTao Tal served as a software architect at IAI Space Industries focusing on real-time satellite tracking systems.")
+				
+				@cofounder(
+					"iris",
+					"iris.shoor@takipi.com",
+					"http://www.linkedin.com/in/irisshoor",
+					"http://twitter.com/IrisShoor",
+					"http://www.startupmoon.com/",
+					"Iris Shoor",
+					"VP Product & Marketing",
+					"Iris is the VP of Product and Marketing at Takipi, responsible for designing and marketing the company's innovative technology. Previously, Iris was co-founder and VP Product at VisualTao, acquired by Autodesk in 2009. Following the acquisition, Iris served as the product line manager for Autodesk's flagship web and mobile product line - bringing it from zero to 10M users in less than two years. Iris holds a B.Arch Cum Laude from the Bezalel Academy of Art and Design in Jerusalem.")
+			</div>
+			<div class="coFoundersList2">
+				@{
+					val chen = 
+						cofounder(
+							"chen",
+							"chen.harel@takipi.com",
+							"http://www.linkedin.com/in/chenh",
+							"http://twitter.com/chenharel",
+							null,
+							"Chen Harel",
+							"Co-Founder",
+							"Chen is a cloud architect at Takipi focusing on scalability and availability. Previously, Chen was a team lead at Autodesk, where he led the development of the company's flagship cloud backend infrastructure. Prior to that Chen was a software engineer at VisualTao. Chen has a B.Sc in Computer Science and Management from Tel-Aviv University.")
+					
+					val niv = 
+						cofounder(
+							"niv",
+							"niv@takipi.com",
+							"http://www.linkedin.com/in/nivst",
+							"http://twitter.com/nivstein",
+							null,
+							"Niv Steingarten",
+							"VP R&D",
+							"Niv is VP of R&D at Takipi, responsible for making software magic happen. Previously, Niv was principal developer at Autodesk, where he led the development of the company's flagship mobile iOS and Android apps. Prior to that, Niv was employee no. 1 at VisualTao. Niv has a B.Sc Magna Cum Laude in Computer Science from Tel-Aviv University.")
+					
+					val dor = 
+						cofounder(
+							"dor",
+							"dor.levi@takipi.com",
+							"http://www.linkedin.com/in/dorlevi",
+							null,
+							null,
+							"Dor Levi",
+							"Co-Founder",
+							"Dor is a senior algorithms developer at Takipi focusing on graph theory. Previously, dor was principal developer at Autodesk, where he led the development of the company's flagship 3D mobile engine. Prior to that Dor was employee no. 2 at VisualTao. Dor holds a B.Sc Magna Cum Laude in Computer Science from Tel-Aviv University.")
+					
+					HtmlFormat.fill(Random.shuffle(List(chen, dor, niv)))
+				}
+			</div>
+		</div>
+		<div class="teamBox aboutBox">
+			<code class="boxHeader">
+				takipi.add(<span class="value">"Kick-ass team"</span>);
+			</code>
+			<div class="teamMembersList">
+				<div class="subList">
+					@member("alex",		"Alex Zhitnitsky", "")
+					@member("cassandra","Cassandra Salisbury", "")
+					@member("david",	"David Levanon", "")
+					@member("guy",		"Guy Isacar", "")
+					@member("hen",		"Hen Amar", "")
+					@member("moshe",	"Moshe Tsur", "")
+					@member("ohad",		"Ohad Almog", "")
+					<div class="subListDecoration"></div>
+				</div>
+				<div class="subList">
+					@member("ophir",	"Ophir Primat", "")
+					@member("shimi",	"Shimi Bernholtz", "")
+					@member("sivan",	"Sivan Franko", "")
+					@member("steve",	"Steve Reyes", "")
+					@member("tzofia",	"Tzofia Shiftan", "")
+					@member("yuri",		"Yuri Klayman", "")
+					<a class="jobsLink" href="@routes.Application.jobs">@member("you", "You", "Join Our Team")</a>
+					<div class="subListDecoration"></div>
+				</div>
+			</div>
+		</div>
+		<div class="investoresBox aboutBox">
+			<code class="boxHeader">
+				takipi.add(<span class="value">"World-class investors"</span>);
+			</code>
+			<div class="investoresList">
+				@member("venky", "Venky Ganesan", "Menlo Ventures")
+				@member("avery", "Avery More", "Menlo Ventures")
+				<a href="http://www.menloventures.com/" target="_blank"><div class="menloIcon"></div></a>
+			</div>
+		</div>
+	</div>
+</div>

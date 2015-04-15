@@ -1,0 +1,244 @@
+
+package views.html.bluesite.pages
+
+import play.twirl.api._
+import play.twirl.api.TemplateMagic._
+
+import play.api.templates.PlayMagic._
+import models._
+import controllers._
+import play.api.i18n._
+import play.api.mvc._
+import play.api.data._
+import views.html._
+
+/**/
+object whytakipi extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template0[play.twirl.api.HtmlFormat.Appendable] {
+
+  /**/
+  def apply():play.twirl.api.HtmlFormat.Appendable = {
+      _display_ {
+
+Seq[Any](format.raw/*1.1*/("""<div id="blueSiteWhyTakipiMain">
+	<section class="why-takipi">
+		<header class="heading">
+			<div class="container">
+				<h1>Why Takipi?</h1>
+				<p>Choose your role to learn how Takipi helps you deliver better applications.</p>
+			</div>
+		</header><!-- heading -->
+		<div class="info-tabs">
+			<div class="container">
+				<ul class="nav-tabs">
+					<li>
+						<a class="ie-fix" href="#developer-section">
+							<img src="assets/images/bluesite/img-03.png" alt="#" width="162" height="162" preventResize>
+							<span class="txt"><span>Developer</span></span>
+						</a>
+					</li>
+					<li>
+						<a class="ie-fix" href="#devops-section">
+							<img src="assets/images/bluesite/img-04.png" alt="#" width="162" height="162" preventResize>
+							<span class="txt"><span>DevOps</span></span>
+						</a>
+					</li>
+					<li>
+						<a class="ie-fix" href="#engineering-manager-section">
+							<img src="assets/images/bluesite/img-05.png" alt="#" width="162" height="162" preventResize>
+							<span class="txt"><span>Engineering Manager</span></span>
+						</a>
+					</li>
+					<li>
+						<a class="ie-fix" href="#executive-section">
+							<img src="assets/images/bluesite/img-06.png" alt="#" width="162" height="162" preventResize>
+							<span class="txt"><span>Executive</span></span>
+						</a>
+					</li>
+				</ul>
+			</div><!-- container -->
+			<div id="developer-section" class="content">
+				<div class="container">
+					<div class="holder">
+						<h2>Fixing code in production doesn't have to be a fire drill</h2>
+						<p>The biggest challenge of solving bugs in production is to reproduce the code and variable state that caused them.</p>
+						<p>Takipi bridges the traditional gap between development and production to give you the same level of visibility into errors on your servers that you would get locally.</p>
+						<p><strong>Detect and fix -</strong> Takipi detects every caught and uncaught exception, HTTP and log error in production and shows the code and variable state that led to them. See the value of each variable and object in the code across the call stack - 5 levels into the heap.</p>
+						<p><strong>Distributed debugging -</strong> If the error involves multiple machines communicating via HTTP / REST, Takipi shows the unified call stack - complete with source code and variable state for each machine.</p>
+						<p><strong>Reproducing errors -</strong> Takipi automatically captures the inputs passed into your code regardless of the framework or container you use (e.g. servlets, actors, thread-pools...), so you can immediately reproduce errors locally.</p>
+						<figure class="img">
+							<img src="assets/images/bluesite/img-07.png" alt="#" width="608" height="331" preventResize>
+						</figure>
+						<p><strong>Alerting -</strong> Takipi alerts you when new errors occur in your code in production. You can filter errors to see just the ones from specific servers, code locations, or entry points. Proactive notifications give you more time to respond - before the alarms go off and users are affected.</p>
+						<p><strong>Smarter logs -</strong> Logs are the primary source of information for production debugging, yet can only provide a stack trace and error message at best. Takipi makes application log files smarter by connecting errors directly to the variable state that caused them.</p>
+						<p>Takipi appends a link to each log error to the code and variable state that led to it (even across machines). This link is automatically transferred to you as part of the log file, or through a log analyzer (e.g. Splunk, Logstash).</p>
+						<figure class="img img-2">
+							<img src="assets/images/bluesite/img-08.png" alt="#" width="546" height="397" preventResize>
+						</figure>
+						<p><strong>JIRA issues -</strong> To close a bug issue, the main ingredient you need is the variable state causing it. This can require multiple iterations with QA and DevOps teams for gathering data, adding log statements, and reproducing the error. JIRA issues opened through Takipi provide you the code and variable state that led to the error - so you can move directly to fixing it.</p>
+					</div><!-- holder -->
+				</div><!-- container -->
+			</div><!-- tab-01 -->
+			<div id="devops-section" class="content devops">
+				<div class="container">
+					<div class="holder">
+						<h2>Know when code breaks.<br /> Give developers the information they need to fix it.</h2>
+						<ul class="info-list">
+							<li>Know when new code introduces errors into production.</li>
+							<li>See real-time analytics to zoom in on the errors that impact users the most.</li>
+							<li>Provide developers the code and variable state they need to fix errors.</li>
+						</ul>
+						<p>When code breaks in production DevOps are on the front line. Knowing when new errors are introduced into production and identifying the critical ones is crucial to ensuring reliability and normal operations.</p>
+						<p><strong>Deploy with confidence -</strong> Deploying new code means a high chance of introducing bugs and impacting users and site reliability. Takipi detects all caught and uncaught exceptions, HTTP and log errors in production and shows the code and variable state that caused them. This allows developers to reproduce or fix an error without having to sift through logs or deploy new logging statements.</p>
+						<p>Real-time analytics give you a bird's eye view of all errors across your cluster after a new deployment or configuration change.</p>
+						<p><strong>See when errors:</strong></p>
+						<section class="info-block">
+							<div class="box">
+								<h3>Are introduced by a new<br /> deployment.</h3>
+								<code>
+									JSONObject buildCampaign() &#123;<br />
+									er> publishers = fetchLivePublishers();<br />
+									 &#160; Collections.shuffle(publishers);<br />
+									ndidate = selectPublisher(publishers);<br />
+									gn = internalCreateCamapain(candidate);
+									<span class="info-bubble ie-fix">
+										<strong class="ttl">New</strong>
+										<span>First seen<br /> 2 hours ago</span>
+									</span>
+								</code>
+							</div><!-- box -->
+							<div class="box">
+								<h3>Increase in volume or rate.</h3>
+								<code class="code-2">
+									NullPointerException<br />
+									at SystemInfo.addItem
+									<span class="info-bubble ie-fix" style="left:32px;">
+										<strong class="ttl ico-2">370%</strong>
+										<span class="sub-ttl">Last 24 hours</span>
+									</span>
+								</code>
+							</div><!-- box -->
+							<div class="box">
+								<h3>Occur due to changes in 3rd party code or external web services.</h3>
+								<img src="assets/images/bluesite/img-09.png" alt="#" class="image" width="68" height="130" preventResize>
+							</div><!-- box -->
+						</section><!-- info-block -->
+						<p>The alerting wizard lets you control exactly which errors you are notified on - so you can respond to the errors that matter the most.</p>
+						<p><strong>Communicate to developers -</strong> to fix and reproduce bugs in production, developers need to gather the code and variable state that caused them. This can take anywhere from hours to days, and require multiple iterations. Takipi captures the code and variable state leading to code errors from the JVM. Share this information with developers through email, or use the JIRA integration to open a ticket which you can then track.</p>
+						<p><strong>High performance, low-latency -</strong> Takipi was built to run in high scale environments that process up to billions of requests per day. Since Takipi responds to code errors and logging statements at the JVM level, it does not rely on log files for information. This means no additional disk or network IO overhead is added for uploading log files.</p>
+						<p>The java agent throttles itself to ensure CPU overhead does not go over 3% - even under extreme performance conditions.</p>
+						<p><strong>Simple to integrate  -</strong> Takipi runs as a standard Java agent and does not require code changes, annotations, or build configurations. Install using: Wget, cURL, DEB, RPM, Chef, Puppet, .dmg (OS X), .msi (Win).</p>
+						<p><a href=""""),_display_(/*109.20*/routes/*109.26*/.BlueSite.howitworks),format.raw/*109.46*/("""">Click here</a> to learn more about how Takipi works.</p>
+					</div><!-- holder -->
+					<section class="img-info">
+						<img src="assets/images/bluesite/img-10.png" alt="#" width="1102" height="455" preventResize>
+						<div class="box">
+							<p>Real-time analytics give you visibility into code errors across your cluster, and let you zoom in on the ones that affect users the most.</p>
+						</div>
+						<div class="box box-2">
+							<p>Provide developers the code and variable state leading to each error.</p>
+						</div>
+					</section><!-- img-info -->
+				</div><!-- container -->
+			</div><!-- tab-02 -->
+			<div id="engineering-manager-section" class="content">
+				<div class="container">
+					<div class="holder">
+						<h2>See the errors that impact users the most.<br /> Get the code and variable state that caused them.</h2>
+						<p>One of the biggest resource drains for engineering teams is responding to and fixing customer-facing issues.</p>
+						<p>Takipi provides your team with the code and variable state behind every error in production. This enables your engineers to nail down issues quickly, and focus their time on building new features and meeting product deadlines.</p>
+						<p><strong>Early detection -</strong> Takipi runs at the JVM level and detects all caught and uncaught exceptions, HTTP and log errors. Real-time analytics help you cut through the noise to spend resources on the bugs that really matter.</p>
+						<p><strong>See which errors:</strong></p>
+						<section class="info-block">
+							<div class="box">
+								<h3>Were introduced by a recent deployment.</h3>
+								<ul class="list">
+									<li>SocketException</li>
+									<li class="ico-2">InvalidCastException <span class="tip">Ver 2.4.1</span></li>
+									<li class="ico-3">Log Error <span class="tip" style="left:81px;">Ver 2.4.1</span></li>
+									<li class="ico-2">IlligalArgumentException</li>
+								</ul>
+							</div><!-- box -->
+							<div class="box">
+								<h3>Are happening the most, and at what rate.</h3>
+								<ul class="list">
+									<li>SocketException</li>
+									<li class="ico-2 active">
+										InvalidCastException
+										<span class="info-bubble ie-fix">
+											<strong class="ttl ico-3">42k</strong>
+											<span>Times</span>
+										</span>
+										<span class="info-bubble small ie-fix" style="left:199px; top:-44px;">
+											<strong class="ttl ico-2">370%</strong>
+											<span>Last 24 hrs</span>
+										</span>
+									</li>
+									<li class="ico-3">Log Error</li>
+									<li class="ico-2">IlligalArgumentException</li>
+								</ul>
+							</div><!-- box -->
+							<div class="box">
+								<h3>Relate to specific parts of the code or to external applications.</h3>
+								<ul class="list">
+									<li>SocketException <span class="tip color-2" style="left:126px;">Web API</span></li>
+									<li class="ico-2">InvalidCastException</li>
+									<li class="ico-3">Log Error <span class="tip color-2" style="left:78px;">App</span></li>
+									<li class="ico-2">IlligalArgumentException <span class="tip color-2" style="left:179px;">Hadoop</span></li>
+								</ul>
+							</div><!-- box -->
+						</section><!-- info-block -->
+						<p><strong>Powerful filtering -</strong> Cut through the noise and get right to the errors that need attention. Filter out errors based on type, category, or location. Hide unimportant and known errors with one click. Customized searches allow you to get to the most important errors based on the criteria that matter to you.</p>
+						<figure class="img img-3">
+							<img src="assets/images/bluesite/img-11.png" alt="#" width="342" height="299" preventResize>
+						</figure>
+						<p><strong>Drilling down -</strong> When trying to fix a customer-facing error the main ingredient engineers need is the variable information leading to it. This can require multiple iterations with QA and DevOps team, costing precious engineering cycles. Takipi shows developers the code and variable state within the JVM at the moment of error, without having to sift through log files or deploy new logging statements.</p>
+						<figure class="img">
+							<img src="assets/images/bluesite/img-07.png" alt="#" width="608" height="331" preventResize >
+						</figure>
+						<p><strong>Team workflow -</strong> Making sure accurate information flows between developers, DevOps, and QA is critical to closing tickets and meeting delivery deadlines. Takipi lets teams share the code and variable state behind each error with one click. JIRA integration lets you open tickets complete with variable information and track their progress.</p>
+						<p><strong>Smart alerting -</strong> When code breaks in production you want to give your team as much time as possible to fix the issue - before it affects customers. Takipi immediately lets you know when new errors occur following a release, so you have time to triage and allocate resources.</p>
+						<p><a href=""""),_display_(/*179.20*/routes/*179.26*/.BlueSite.product),format.raw/*179.43*/("""">Click here</a> to see the complete features list</p>
+					</div><!-- holder -->
+				</div><!-- container -->
+			</div><!-- tab-03 -->
+			<div id="executive-section" class="content">
+				<div class="container">
+					<div class="holder">
+						<h2>Fix errors in SaaS and customer-deployed applications before they impact your business.</h2>
+						<ul class="info-list info-list2">
+							<li>Detect errors in production applications before they impact customers.</li>
+							<li>Get the actionable information needed to fix critical issues and prevent downtime.</li>
+							<li>Free engineering resources to ship new features faster, with greater stability.</li>
+						</ul>
+						<p>Takipi helps engineering, DevOps, and QA organizations deliver more stable software, with faster response time to critical customer-facing issues. With growing pressure to ship new software, quality assurance cycles are reduced and software gets pushed out the door more quickly. The harsh reality is that the more code is continuously deployed and changed - the more it breaks, and customers are affected.</p>
+						<p><strong>Prevent impact to customers -</strong> Takipi detects customer-facing errors in SaaS or customer-deployed applications, and gives engineering teams actionable information to fix them. Proactive alerting gives developers more time to fix critical errors, and reduces the time frame in which users are impacted.</p>
+						<p><strong>Fix errors quickly -</strong> When customers complain about issues, it becomes a top priority to fix the problem quickly. As customer support and engineers look for the information, precious time is lost and relationships with customers are negatively affected. Takipi provides real-time, actionable information about the cause of each code error, so engineers can fix it and restore applications to normal.</p>
+						<p><strong>Ship on time -</strong> Time spent fixing customers-facing issues is diverted from already limited engineering cycles. By alerting engineering teams when code breaks and providing them with the information they need to fix it, costly engineering time is saved. Freed cycles can go directly towards meeting product milestones and delivering value to your customers.</p>
+						<p><strong>Improve stability -</strong> One of the biggest hurdles to completing QA cycles and software acceptance tests is to reproduce complex bugs that only happen in internal or customer-owned staging environments. With Takipi, QA teams can immediately capture and communicate the information behind errors, so engineers can start working on the problem right away - saving hours to days of back-and-forth between teams.</p>
+					</div>
+				</div><!-- container -->
+			</div><!-- tab-04 -->
+		</div><!-- info-tabs -->
+	</section><!-- why-takipi -->
+    """),_display_(/*202.6*/bluesite/*202.14*/.pages.scheduler_popup()),format.raw/*202.38*/("""
+"""),format.raw/*203.1*/("""</div>
+"""))}
+  }
+
+  def render(): play.twirl.api.HtmlFormat.Appendable = apply()
+
+  def f:(() => play.twirl.api.HtmlFormat.Appendable) = () => apply()
+
+  def ref: this.type = this
+
+}
+              /*
+                  -- GENERATED --
+                  DATE: Wed Apr 15 17:20:37 IDT 2015
+                  SOURCE: /Users/takipimbp1/temp-hod/site/app/views/bluesite/pages/whytakipi.scala.html
+                  HASH: a7c2e1f17a2e83c1e9f31c283d8a1244ff7d29db
+                  MATRIX: 599->0|8805->8178|8821->8184|8863->8204|13873->13186|13889->13192|13928->13209|16760->16014|16778->16022|16824->16046|16853->16047
+                  LINES: 22->1|130->109|130->109|130->109|200->179|200->179|200->179|223->202|223->202|223->202|224->203
+                  -- GENERATED --
+              */
+          

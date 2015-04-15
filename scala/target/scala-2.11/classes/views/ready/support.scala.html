@@ -1,0 +1,16 @@
+<script type="text/javascript">
+	$(function() {
+		initializeNavigationUserHolderElement();
+		ModalManagerInst.initialize();
+		initializeSocialPopups();
+		initializeFaq();
+		initSelectCodeElement();
+		initShowZopim();
+		
+		initializeMiniSignupDialog(".subPageMiniSignupDialog", ".headerMiniSignup", null, null,  
+			"@globals.LOGIN_PAGE",
+			"@globals.TAKIPI_APP_INDEX",
+			"@globals.SITE_ORIGIN",
+			"@globals.TAKIPI_APP");
+	});
+</script>

@@ -1,0 +1,11 @@
+@(content: Html, skipFooter: Boolean = false, skipInstall: Boolean = false)
+<div id="wrapper">
+	@header()
+	@content
+	@if(!skipInstall) {
+		@install()
+	}
+	@if(!skipFooter) {
+		@footer(true)
+	}
+</div>

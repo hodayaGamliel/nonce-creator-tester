@@ -1,0 +1,9 @@
+@(content: Html, skipInstall: Boolean = false, showInstallWizard: Boolean = false, isLandingPage: Boolean = false)
+<div id="wrapper" @if(isLandingPage){class="landing"}>
+	@header(isLandingPage)
+	@content
+	@if(!skipInstall) {
+		@bluesite.install(showInstallWizard)
+	}
+	@footer(!isLandingPage, isLandingPage)
+</div>

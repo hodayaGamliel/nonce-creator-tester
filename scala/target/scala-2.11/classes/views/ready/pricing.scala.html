@@ -1,0 +1,18 @@
+<script type="text/javascript">
+	$(function() {
+		if (window.mixpanel)
+		{
+			mp_site_pricing_init();
+		}
+		
+		initializeNavigationUserHolderElement();
+		ModalManagerInst.initialize();
+		initializeSocialPopups();
+		
+		initializeMiniSignupDialog(".subPageMiniSignupDialog", ".headerMiniSignup", null, null, 
+			"@globals.LOGIN_PAGE",
+			"@globals.TAKIPI_APP_INDEX",
+			"@globals.SITE_ORIGIN",
+			"@globals.TAKIPI_APP");
+	});
+</script>

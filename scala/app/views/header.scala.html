@@ -1,0 +1,49 @@
+@(isLandingPage: Boolean = false)
+<div id="header">
+	<div class="navigationHolder">
+    @if(!isLandingPage) {
+		<div class="userHolder">
+			<a id="navigation-create-accoun" href="@globals.TAKIPI_CREATE_ACCOUNT" class="signup navBtn">Sign up</a>
+			<a id="navigation-login" href="@globals.TAKIPI_APP" class="login navText">Login</a>
+		</div>
+    }
+		<a class="takipilogo" href="@routes.BlueSite.index">Takipi</a>
+    @if(!isLandingPage) {
+		<ul id="nav">
+			<li><a id="navigation-product" href="@routes.BlueSite.product" class="underlinelink">Product</a></li>
+			<li><a id="navigation-how-it-works" href="@routes.BlueSite.howitworks" class="underlinelink">How it Works</a></li>
+			<li>
+			    <span id="navigation-solution" class="underlinelink">Solutions</span>
+			    <ul class="sub-menu">
+			        <li>
+			            <span class="navigation-section">Role</span>
+			            <ul>
+			                <li><a id="navigation-why-takipi-developer" href="@routes.BlueSite.whytakipi#developer">Developer</a></li>
+			                <li><a id="navigation-why-takipi-devops" href="@routes.BlueSite.whytakipi#devops">Devops</a></li>
+			                <li><a id="navigation-why-takipi-engineering-manager" href="@routes.BlueSite.whytakipi#engineering-manager">Engineering Manager</a></li>
+			                <li><a id="navigation-why-takipi-executive" href="@routes.BlueSite.whytakipi#executive">Executive</a></li>
+			            </ul>
+			         </li>
+			        <li>
+			            <span class="navigation-section">Technology</span>
+			            <ul>
+			                <li><a href="@routes.BlueSite.scala">Scala</a></li>
+			                <li><a href="@routes.Application.newrelicnew">New Relic</a></li>
+			            </ul>
+			         </li>
+			    </ul>
+			</li>
+			<li><a id="navigation-pricing" href="@routes.BlueSite.pricing" class="underlinelink">Pricing</a></li>
+			<li>
+			    <span id="navigation-company" class="underlinelink">Company</span>
+			    <ul class="sub-menu">
+			        <li><a id="navigation-about" href="@routes.Application.about" class="underlinelink">About Us</a></li>
+                    <li><a id="navigation-blog" href="@globals.TAKIPI_BLOG" class="underlinelink" target="_blank">Blog</a></li>
+                    <li><a id="navigation-monsters" href="@routes.Application.monsters" class="underlinelink">Monsters</a></li>
+			    </ul>
+			</li>
+            <li><a id="navigation-support" href="@globals.TAKIPI_SUPPORT_SITE" class="underlinelink">Docs</a></li>
+		</ul>
+    }
+	</div>
+</div>

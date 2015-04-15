@@ -1,0 +1,45 @@
+<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/pricing/pricing.css")"/>
+
+<script>
+	$(document).ready(function(){
+		$('.plans-area .btn-switch').click (function(){
+			$(this).toggleClass('on');
+			if ($(this).hasClass('on')) {
+				$('.plans-area .box .price .num-1').countTo({
+					from: 59,
+					to: 49,
+					speed: 250,
+				});
+				$('.plans-area .box .price .num-2').countTo({
+					from: 85,
+					to: 69,
+					speed: 250,
+				});
+				
+				$(".planInterval").text("yearly");
+			}
+			else {
+				$('.plans-area .box .price .num-1').countTo({
+					from: 49,
+					to: 59,
+					speed: 250,
+				});
+				$('.plans-area .box .price .num-2').countTo({
+					from: 69,
+					to: 85,
+					speed: 250,
+				});
+				
+				$(".planInterval").text("monthly");
+			}
+			return false;
+		});
+	});
+
+	$(window).load(function(){
+		$('[data-equal-height]').make_children_equal_height();
+		$(window).resize(function() { 
+			$('[data-equal-height]').make_children_equal_height()
+		});
+	});
+</script>

@@ -1,0 +1,18 @@
+@(cssClass:String, mail:String, linkedin:String, twitter:String, blog:String, name:String, title:String, about:String)
+<div class="coFounderHolder @cssClass">
+	<div class="imageArea">
+		<div class="image"></div>
+		<div class="social">
+			<a class="mail" href="mailto:@mail"></a>
+			<a class="linkedin" href="@linkedin" target="_blank"></a>
+			<a class="twitter" href="@twitter" target="_blank"></a>
+			<a class="blog" href="@blog" target="_blank"></a>
+		</div>
+	</div>
+	<div class="about">
+		<div class="aboutHeader">@name <span class="seperator">//</span> @title</div>
+		<div class="text">
+			@about
+		</div>
+	</div>
+</div>

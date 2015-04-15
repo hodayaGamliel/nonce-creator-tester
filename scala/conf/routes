@@ -1,0 +1,82 @@
+# Routes
+
+# Home page
+GET		/  		 	                        controllers.BlueSite.index
+GET		/freeserver  		                controllers.BlueSite.index
+GET		/product							controllers.BlueSite.product
+GET		/features							controllers.BlueSite.features
+GET		/how-it-works						controllers.BlueSite.howitworks
+GET 	/security							controllers.BlueSite.security
+GET		/why-takipi							controllers.BlueSite.whytakipi
+GET		/pricing							controllers.BlueSite.pricing
+GET		/scala								controllers.BlueSite.scala
+GET		/debug-less							controllers.BlueSite.debug_less
+GET		/beautiful-exceptions				controllers.BlueSite.beautiful_exceptions
+GET		/schedule-demo						controllers.BlueSite.schedule_demo
+GET		/for-enterprises					controllers.BlueSite.for_enterprises
+GET		/spark								controllers.BlueSite.spark
+GET		/no-log-management					controllers.BlueSite.no_log_management
+
+GET		/index-space                		controllers.Index.space
+
+GET		/ping           					controllers.Application.ping
+GET		/start								controllers.Application.start
+GET		/starting							controllers.Application.start
+GET		/monsters							controllers.Application.monsters
+# GET	/scala								controllers.Application.scala
+GET		/about								controllers.Application.about
+GET		/aboutus							controllers.Application.aboutus
+GET		/sourceattach						controllers.Application.sourceattach
+GET		/newrelicold						controllers.Application.newrelic
+GET		/newrelic							controllers.Application.newrelicnew
+GET		/logs								controllers.Application.logs
+GET		/jobs								controllers.Application.jobs
+GET		/careers							controllers.Application.careers
+GET		/ad-tech							controllers.Application.adtech
+GET		/ad-tech/free-server				controllers.Application.adtech
+GET		/continuous-integration				controllers.Application.ci
+GET		/the-sneaky-bug						controllers.Application.sneakybug
+
+GET		/terms                             	controllers.Application.terms
+GET		/privacy                           	controllers.Application.privacy
+GET		/privacy-policy                    	controllers.Application.privacypolicy
+GET		/tos                               	controllers.Application.tos
+
+# Features
+GET 	/features/main 						controllers.Features.redirect(link="")
+GET 	/features/performance				controllers.Features.performance
+GET 	/features/security					controllers.Features.security
+
+# Features - reorder
+GET		/features-reorder					controllers.FeaturesReorder.main
+GET 	/features-reorder/main 				controllers.FeaturesReorder.redirect(link="")
+GET 	/features-reorder/performance		controllers.FeaturesReorder.performance
+
+GET		/Nonce1 				            controllers.Nonce1.ThrowExcep 
+GET		/faq						        controllers.Support.main
+
+GET		/blog                               controllers.Application.blog
+
+# Redirecting to old S3 bucket of www.takipi.com
+GET		/email/*link			            controllers.Application.redirectS3(folder="email", link)
+GET		/email_sigs/*link	                controllers.Application.redirectS3(folder="email_sigs", link)
+GET		/pub/*link			                controllers.Application.redirectS3(folder="pub", link)
+GET		/velocity/*link		                controllers.Application.redirectS3(folder="velocity", link)
+GET		/vid/*link			                controllers.Application.redirectS3(folder="vid", link)
+
+# CCC: Not to be confused with /assets/images
+GET		/images/*link                       controllers.Application.redirectS3(folder="images", link)
+GET		/img/*link			          		controllers.Application.redirectS3(folder="img", link)
+
+GET		/$link<features.html\w*>			controllers.Features.redirect(link)
+
+# Map static resources from the /public folder to the /assets URL path
+GET		/assets/*file                     	controllers.Assets.at(path="/public", file)
+
+GET		/sitemap.xml                        controllers.Assets.at(path="/public", file = "sitemap.xml")
+GET		/robots.txt                         controllers.Assets.at(path="/public", file = "robots.xml")
+GET		/BingSiteAuth.xml                   controllers.Assets.at(path="/public", file = "BingSiteAuth.xml")
+GET		/google6df9a992524a32e3.html        controllers.Assets.at(path="/public", file = "google6df9a992524a32e3.html")
+
+# Backward compatible - Redirects .html to the new links
+GET   /$link<[\w-]*\.html>					controllers.Application.redirectHtml(link)

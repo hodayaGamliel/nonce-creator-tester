@@ -1,0 +1,9 @@
+@(useTimeout: Boolean = true)
+<section id="scheduler-popup-overlay" @if(!useTimeout){class="scroll-end"}>
+    <aside id="scheduler-popup">
+        <h1>Spending too much time debugging?</h1>
+        <p>Schedule a 1:1 call with one of our performance engineers<br/>to see how you can boost your dev team.</p>
+        <a class="button" href="@routes.BlueSite.schedule_demo">Make it happen</a>
+        <a class="close" href="#close">&times;</a>
+    </aside>
+</section>

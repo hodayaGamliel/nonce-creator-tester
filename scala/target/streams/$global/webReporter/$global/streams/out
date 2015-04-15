@@ -1,0 +1,16 @@
+[0m[[31merror[0m] [0m/Users/takipimbp1/Projects/takipi/test/nonce/scala/app/assets/javascripts/10_takipiMiniSignupElement.js:22: Bad escaping of EOL. Use option multistr if needed.[0m
+[0m[[31merror[0m] [0m	return '<div class="stubSignupElement"> \[0m
+[0m[[31merror[0m] [0m	                                         ^[0m
+[0m[[31merror[0m] [0m/Users/takipimbp1/Projects/takipi/test/nonce/scala/app/assets/javascripts/10_takipiMiniSignupElement.js:23: Bad escaping of EOL. Use option multistr if needed.[0m
+[0m[[31merror[0m] [0m				<form class="stubSignupForm"> \[0m
+[0m[[31merror[0m] [0m				                               ^[0m
+[0m[[31merror[0m] [0m/Users/takipimbp1/Projects/takipi/test/nonce/scala/app/assets/javascripts/10_takipiMiniSignupElement.js:22: Missing semicolon.[0m
+[0m[[31merror[0m] [0m	return '<div class="stubSignupElement"> \[0m
+[0m[[31merror[0m] [0m	         ^[0m
+[0m[[31merror[0m] [0m/Users/takipimbp1/Projects/takipi/test/nonce/scala/app/assets/javascripts/10_takipiMiniSignupElement.js:24: Bad escaping of EOL. Use option multistr if needed.[0m
+[0m[[31merror[0m] [0m					' + headerHtml + ' \[0m
+[0m[[31merror[0m] [0m					                    ^[0m
+[0m[[31merror[0m] [0m/Users/takipimbp1/Projects/takipi/test/nonce/scala/app/assets/javascripts/10_takipiMiniSignupElement.js:25: Bad escaping of EOL. Use option multistr if needed.[0m
+[0m[[31merror[0m] [0m					<input class="emailInput" type="text" autocomplete="off" placeholder="' + mailPlaceholderTextValue + '"></input> \[0m
+[0m[[31merror[0m] [0m					                                                                                                                  ^[0m
+[0m[[31merror[0m] [0m196 errors found[0m
