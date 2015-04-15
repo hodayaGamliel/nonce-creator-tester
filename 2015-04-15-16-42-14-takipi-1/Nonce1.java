@@ -2,12 +2,12 @@ public class Nonce1
 {
 	public static void main(String[] args) throws Exception
 	{
-			 throwExcep1();
+			 throwExcep2();
 	}
 
-	public static void throwExcep1() throws Exception
+	public static void throwExcep2() throws Exception
 	{
-		int nonce21 = 3;
+		int nonce4 = 3;
 		throw new Exception();
 	}
 }
