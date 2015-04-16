@@ -7,7 +7,7 @@ JAVA_OPTS="-agentlib:TakipiAgent"
 ##option - 2 change the nonce name
 CURRENT_NAME="throwExcep1"
 #CURRENT_NAME="nonce1"
-NEW_DIR=2
+NEW_DIR=1
 #set -x
 
 function counter()
@@ -87,7 +87,7 @@ function run_java_program
 
   cp $CLASS_NAME* $DIR_NAME
   javac $DIR_NAME/$JAVA_FILE
-  java -cp $DIR_NAME $CLASS_NAME
+  java -agentlib:TakipiAgent -cp $DIR_NAME $CLASS_NAME
 }
 
 # This function clears the java file before execution.

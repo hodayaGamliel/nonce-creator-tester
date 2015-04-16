@@ -2,9 +2,13 @@
 
 PATH_TO_SCALA_FILE="/Users/takipimbp1/Projects/takipi/test/nonce/scala/app/controllers"
 SCALA_FILE="$PATH_TO_SCALA_FILE/Nonce1.scala"
-TEST_FILE="$PATH_TO_SCALA_FILE/test.scala"
+TEST_SCALA_FILE="$PATH_TO_SCALA_FILE/test.scala"
+PATH_TO_ROUTES="/Users/takipimbp1/Projects/takipi/test/nonce/scala/conf"
+ROUTES_FILE="$PATH_TO_ROUTES/routes"
+TEST_ROUTES_FILE="$PATH_TO_ROUTES/test.txt"
 JAVA_OPTS="-agentlib:TakipiAgent"
 CURRENT_NAME="throwExcep1"
+
 #CURRENT_NAME="nonce1"
 #NEW_DIR=2
 
@@ -60,8 +64,11 @@ function change()
   CURRENT_NAME=$1
   NEW_NAME=$2
 
-  cp $SCALA_FILE $TEST_FILE
-  sed "s/$CURRENT_NAME/$NEW_NAME/g" $TEST_FILE > $SCALA_FILE
+  cp $SCALA_FILE $TEST_SCALA_FILE
+  sed "s/$CURRENT_NAME/$NEW_NAME/g" $TEST_SCALA_FILE > $SCALA_FILE
+
+  cp $ROUTES_FILE $TEST_ROUTES_FILE
+  sed "s/$CURRENT_NAME/$NEW_NAME/g" $TEST_ROUTES_FILE > $ROUTES_FILE
 }
 
 function dir_name()
@@ -79,17 +86,8 @@ function dir_name()
 
 function run_scala_program
 {
-  # NUM=$1
-  # DIR_NAME=$(dir_name $NUM)
-  #
-  # if [ ! -d "$DIR_NAME" ]; then
-  #     mkdir $DIR_NAME
-  # fi
-  #
-  # cp $PATH_TO_SCALA_FILE/$CLASS_NAME $DIR_NAME
-  ./activator run
+  curl -i http://localhost:9000/Nonce1\?nav\=aaa
 }
-
 
 # This function clears the java file before execution.
 function clear()
@@ -97,8 +95,14 @@ function clear()
   CURRENT_NAME=$1
   FIRST_NAME=$2
 
-  cp $SCALA_FILE $TEST_FILE
-  sed "s/$CURRENT_NAME/$FIRST_NAME/g" $TEST_FILE > $SCALA_FILE
+  change $CURRENT_NAME $FIRST_NAME
+}
+
+function close()
+{
+  # PID=ps -ef | grep activator | awk '{print $2}' | head -n 1
+  # kill -9 $PID
+  kill -9 `ps -ef | grep activator | awk '{print $2}' | head -n 1`
 }
 
 function run()
@@ -108,7 +112,7 @@ function run()
 
   NEW_NAME=$(get_new_name $CURRENT_NAME)
   change $CURRENT_NAME $NEW_NAME
-  run_scala_program $NUM
+  run_scala_program
 }
 
 function main()
@@ -118,8 +122,7 @@ function main()
   A="$3"
   check_if_entered_name $A
   FIRST_NAME=$CURRENT_NAME
-  option $OPTION
-
+#  option $OPTION
   for i in `seq 1 $TIMES`;
   do
     echo run number: $i
@@ -128,6 +131,7 @@ function main()
   done
 
   clear $CURRENT_NAME $FIRST_NAME
+  close
 }
 
 main $@

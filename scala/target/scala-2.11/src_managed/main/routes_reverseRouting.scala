@@ -1,6 +1,6 @@
 // @SOURCE:/Users/takipimbp1/Projects/takipi/test/nonce/scala/conf/routes
-// @HASH:56954c7c812a0076fc54783ec78ee11fd88ad9b8
-// @DATE:Wed Apr 15 19:19:58 IDT 2015
+// @HASH:8b7be1c1520d736fcef022b0cc9de0c9b211f5e4
+// @DATE:Thu Apr 16 17:23:41 IDT 2015
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -164,30 +164,23 @@ case (file) if file == "google6df9a992524a32e3.html" =>
 }
                           
 
+// @LINE:56
 // @LINE:55
 class ReverseNonce1 {
 
 
+// @LINE:56
 // @LINE:55
-def ThrowExcep(): Call = {
-   import ReverseRouteContext.empty
-   Call("GET", _prefix + { _defaultPrefix } + "Nonce1")
+def throwExcep70(): Call = {
+   () match {
+// @LINE:55
+case ()  =>
+  import ReverseRouteContext.empty
+  Call("GET", _prefix + { _defaultPrefix } + "Nonce1")
+                                         
+   }
 }
-                        
-
-}
-                          
-
-// @LINE:56
-class ReverseSupport {
-
-
-// @LINE:56
-def main(): Call = {
-   import ReverseRouteContext.empty
-   Call("GET", _prefix + { _defaultPrefix } + "faq")
-}
-                        
+                                                
 
 }
                           
@@ -750,34 +743,23 @@ def at : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
+// @LINE:56
 // @LINE:55
 class ReverseNonce1 {
 
 
+// @LINE:56
 // @LINE:55
-def ThrowExcep : JavascriptReverseRoute = JavascriptReverseRoute(
-   "controllers.Nonce1.ThrowExcep",
+def throwExcep70 : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Nonce1.throwExcep70",
    """
       function() {
+      if (true) {
       return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "Nonce1"})
       }
-   """
-)
-                        
-
-}
-              
-
-// @LINE:56
-class ReverseSupport {
-
-
-// @LINE:56
-def main : JavascriptReverseRoute = JavascriptReverseRoute(
-   "controllers.Nonce1.ThrowExcep1",
-   """
-      function() {
+      if (true) {
       return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "faq"})
+      }
       }
    """
 )
@@ -1441,26 +1423,14 @@ def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.
 }
                           
 
+// @LINE:56
 // @LINE:55
 class ReverseNonce1 {
 
 
 // @LINE:55
-def ThrowExcep(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.Nonce1.ThrowExcep(), HandlerDef(this.getClass.getClassLoader, "", "controllers.Nonce1", "ThrowExcep", Seq(), "GET", """""", _prefix + """Nonce1""")
-)
-                      
-
-}
-                          
-
-// @LINE:56
-class ReverseSupport {
-
-
-// @LINE:56
-def main(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.Nonce1.ThrowExcep1(), HandlerDef(this.getClass.getClassLoader, "", "controllers.Support", "main", Seq(), "GET", """""", _prefix + """faq""")
+def throwExcep70(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Nonce1.throwExcep70(), HandlerDef(this.getClass.getClassLoader, "", "controllers.Nonce1", "throwExcep70", Seq(), "GET", """""", _prefix + """Nonce1""")
 )
                       
 
