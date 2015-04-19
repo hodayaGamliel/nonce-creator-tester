@@ -10,8 +10,9 @@ object Support extends Controller
 	{ request =>
 		val maybeNav = request.queryString.getOrElse("nav", Seq(""))(0)
 		val maybeSub = request.queryString.getOrElse("sub", Seq(""))(0)
-		val nonce30 = request.queryString.getOrElse("nonce30", Seq(""))(0)
-			if (!maybeNav.isEmpty && !maybeSub.isEmpty && !nonce30.isEmpty)
+		val nonce45 = request.queryString.getOrElse("nonce45", Seq(""))(0)
+		throw new IllegalStateException(maybeNav.toString)
+			if (!maybeNav.isEmpty && !maybeSub.isEmpty && !nonce45.isEmpty)
 		{
 			Redirect(globals.TAKIPI_SUPPORT_SITE + "/" + maybeNav.toString + "/" + maybeSub.toString, 301)
 		}
@@ -22,6 +23,7 @@ object Support extends Controller
 		}
 		else
 		{
+			throw new IllegalStateException(maybeNav.toString)
 			Redirect(globals.TAKIPI_SUPPORT_SITE, 301)
 		}
 	}

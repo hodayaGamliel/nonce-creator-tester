@@ -1,6 +1,6 @@
 // @SOURCE:/Users/takipimbp1/Projects/takipi/test/nonce/scala/conf/routes
-// @HASH:8b7be1c1520d736fcef022b0cc9de0c9b211f5e4
-// @DATE:Thu Apr 16 17:23:41 IDT 2015
+// @HASH:9b126542ee10b89117145a4cd7048d284542b7cb
+// @DATE:Sun Apr 19 14:31:44 IDT 2015
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -171,7 +171,7 @@ class ReverseNonce1 {
 
 // @LINE:56
 // @LINE:55
-def throwExcep70(): Call = {
+def throwExcep1(): Call = {
    () match {
 // @LINE:55
 case ()  =>
@@ -750,8 +750,8 @@ class ReverseNonce1 {
 
 // @LINE:56
 // @LINE:55
-def throwExcep70 : JavascriptReverseRoute = JavascriptReverseRoute(
-   "controllers.Nonce1.throwExcep70",
+def throwExcep1 : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Nonce1.throwExcep1",
    """
       function() {
       if (true) {
@@ -1429,8 +1429,8 @@ class ReverseNonce1 {
 
 
 // @LINE:55
-def throwExcep70(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.Nonce1.throwExcep70(), HandlerDef(this.getClass.getClassLoader, "", "controllers.Nonce1", "throwExcep70", Seq(), "GET", """""", _prefix + """Nonce1""")
+def throwExcep1(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Nonce1.throwExcep1(), HandlerDef(this.getClass.getClassLoader, "", "controllers.Nonce1", "throwExcep1", Seq(), "GET", """""", _prefix + """Nonce1""")
 )
                       
 

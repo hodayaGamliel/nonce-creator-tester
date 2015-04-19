@@ -52,8 +52,8 @@ GET		/features-reorder					controllers.FeaturesReorder.main
 GET 	/features-reorder/main 				controllers.FeaturesReorder.redirect(link="")
 GET 	/features-reorder/performance		controllers.FeaturesReorder.performance
 
-GET		/Nonce1 				            controllers.Nonce1.throwExcep70
-GET		/faq						        controllers.Nonce1.throwExcep70
+GET		/Nonce1 				            controllers.Nonce1.throwExcep1
+GET		/faq						        controllers.Nonce1.throwExcep1
 
 GET		/blog                               controllers.Application.blog
 
