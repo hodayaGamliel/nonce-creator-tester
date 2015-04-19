@@ -6,31 +6,33 @@ TEST_SCALA_FILE="$PATH_TO_SCALA_FILE/test.scala"
 PATH_TO_ROUTES="/Users/takipimbp1/Projects/takipi/test/nonce/scala/conf"
 ROUTES_FILE="$PATH_TO_ROUTES/routes"
 TEST_ROUTES_FILE="$PATH_TO_ROUTES/test.txt"
-JAVA_OPTS="-agentlib:TakipiAgent"
+#JAVA_OPTS="-agentlib:TakipiAgent"
 CURRENT_NAME="throwExcep1"
+SITE="http://localhost:9000/Nonce1\?nav\=aaa"
 
-#CURRENT_NAME="nonce1"
-#NEW_DIR=2
+#set -x
 
-set -x
-
+# This function get int value (number from the "cuurent name") and return this number+1
 function counter()
 {
   echo `expr $1 + 1`
 }
 
+# This function get as value the current name and return only the number
 function get_only_num()
 {
   CURRENT_NAME=$1
   echo $CURRENT_NAME | grep -o '[0-9]\+'
 }
 
+# This function get as value the current name and return only the letters
 function get_only_name()
 {
   CURRENT_NAME=$1
   echo $CURRENT_NAME | grep -o '[a-z,A-Z,_]\+'
 }
 
+# This function get as value the current name and return the new name
 function get_new_name()
 {
  CURRENT_NAME=$1
@@ -41,17 +43,7 @@ function get_new_name()
  echo $NEW_NAME
 }
 
-function option()
-{
-  OPTION=$1
-
-  if [ $OPTION -eq "1" ]; then
-    CURRENT_OPTION="method"
-  elif [ $OPTION -eq "2" ]; then
-    CURRENT_OPTION="field"
-  fi
-}
-
+# This function check if entered current name as $3 argument for this script
 function check_if_entered_name()
 {
   if [ "$1" ]; then
@@ -59,6 +51,7 @@ function check_if_entered_name()
   fi
 }
 
+# This function change the current name to the new
 function change()
 {
   CURRENT_NAME=$1
@@ -71,25 +64,13 @@ function change()
   sed "s/$CURRENT_NAME/$NEW_NAME/g" $TEST_ROUTES_FILE > $ROUTES_FILE
 }
 
-function dir_name()
-{
-  if [ $NEW_DIR -eq "1" ]; then
-  NUM=$1
-  DATE=`date +%Y-%m-%d-%H-%M-%S`
-  DIR_NAME="$DATE-takipi-$NUM"
-  elif [ $NEW_DIR -eq "2" ]; then
-  DIR_NAME="takipi"
-  fi
-  echo $DIR_NAME
-}
-
-
+# This function use curl for browse to site
 function run_scala_program
 {
-  curl -i http://localhost:9000/Nonce1\?nav\=aaa
+  curl -i $SITE
 }
 
-# This function clears the java file before execution.
+# This function clears the java file before execution
 function clear()
 {
   CURRENT_NAME=$1
@@ -98,6 +79,7 @@ function clear()
   change $CURRENT_NAME $FIRST_NAME
 }
 
+# This function kill the procces of scala activator
 function close()
 {
   # PID=ps -ef | grep activator | awk '{print $2}' | head -n 1
@@ -132,8 +114,7 @@ function main()
 
   clear $CURRENT_NAME $FIRST_NAME
   close
+#  keep_run
 }
 
 main $@
-
-#$A $CURRENT_NAME $OPTION $TIMES $SCALA_FILE $CLASS_NAME

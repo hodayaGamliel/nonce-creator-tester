@@ -18,7 +18,7 @@
 [0m[[0minfo[0m] [0mCompiling 80 Scala sources and 1 Java source to /Users/takipimbp1/Projects/takipi/test/nonce/scala/target/scala-2.11/classes...[0m
 [0m[[0mdebug[0m] [0mGetting compiler-interface from component compiler for Scala 2.11.1[0m
 [0m[[0mdebug[0m] [0mGetting compiler-interface from component compiler for Scala 2.11.1[0m
-[0m[[0mdebug[0m] [0mRunning cached compiler 559ba385, interfacing (CompilerInterface) with Scala compiler version 2.11.1[0m
+[0m[[0mdebug[0m] [0mRunning cached compiler 3ea20253, interfacing (CompilerInterface) with Scala compiler version 2.11.1[0m
 [0m[[0mdebug[0m] [0mCalling Scala compiler with arguments  (CompilerInterface):[0m
 [0m[[0mdebug[0m] [0m	-deprecation[0m
 [0m[[0mdebug[0m] [0m	-unchecked[0m
@@ -33,4 +33,3 @@
 [0m[[31merror[0m] [0m       ^[0m
 [0m[[31merror[0m] [0mone error found[0m
 [0m[[0mdebug[0m] [0mCompilation failed (CompilerInterface)[0m
-[0m[[31merror[0m] [0m(compile:[31mcompile[0m) Compilation failed[0m
