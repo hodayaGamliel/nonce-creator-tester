@@ -11,7 +11,7 @@ public class Nonce1
 
         public static void throwExcep1() throws Exception
         {
-                int nonce656 = 5;
+                int nonce1 = 5;
                 System.out.println(nonce65603);
                 try
                 {
