@@ -6,9 +6,10 @@ JAVA_OPTS="-agentlib:TakipiAgent"
 ##option - 1 change the method name
 ##option - 2 change the nonce name
 #CURRENT_NAME="throwExcep1"
-CURRENT_NAME="nonce1"
-NEW_DIR=1
-#set -x
+#CURRENT_NAME="nonce1"
+
+NEW_DIR=2
+set -x
 
 # This function get int value (number from the "cuurent name") and return this number+1
 function counter()
@@ -67,8 +68,7 @@ function change()
   CURRENT_NAME=$1
   NEW_NAME=$2
 
-  cp $JAVA_FILE test.java
-  sed "s/$nonce1/$CURRENT_NAME/g" test.java > $JAVA_FILE
+  cp $JAVA_FILE test.java 
   sed "s/$CURRENT_NAME/$NEW_NAME/g" test.java > $JAVA_FILE
 }
 
@@ -138,9 +138,11 @@ function main()
   TIMES="$2"
   A="$3"
   check_if_entered_name $A
-  FIRST_NAME=$CURRENT_NAME
+  FIRST_NAME="nonce1" 
+# FIRST_NAME=$CURRENT_NAME
   option $OPTION
 
+  sed -ie "s/nonce1/$CURRENT_NAME/g" $JAVA_FILE
   for i in `seq 1 $TIMES`;
   do
     echo run number: $i

@@ -11,8 +11,8 @@ public class Nonce1
 
         public static void throwExcep1() throws Exception
         {
-                int nonce101 = 5;
-                System.out.println(nonce101);
+                int nonce1 = 5;
+                System.out.println(nonce1);
                 try
                 {
                         throw new Exception();
@@ -20,6 +20,7 @@ public class Nonce1
                 catch (Exception e)
                 {
                         e.printStackTrace();
-                }
+                        Thread.sleep(5000);
+		}
         }
 }
