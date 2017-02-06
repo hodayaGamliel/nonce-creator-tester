@@ -5,8 +5,8 @@ CLASS_NAME="Nonce1"
 JAVA_OPTS="-agentlib:TakipiAgent"
 ##option - 1 change the method name
 ##option - 2 change the nonce name
-CURRENT_NAME="throwExcep1"
-#CURRENT_NAME="nonce1"
+#CURRENT_NAME="throwExcep1"
+CURRENT_NAME="nonce1"
 NEW_DIR=1
 #set -x
 
@@ -68,6 +68,7 @@ function change()
   NEW_NAME=$2
 
   cp $JAVA_FILE test.java
+  sed "s/$nonce1/$CURRENT_NAME/g" test.java > $JAVA_FILE
   sed "s/$CURRENT_NAME/$NEW_NAME/g" test.java > $JAVA_FILE
 }
 
