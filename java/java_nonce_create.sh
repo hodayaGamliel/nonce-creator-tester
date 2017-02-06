@@ -96,7 +96,7 @@ function run_java_program
   fi
 
   cp $CLASS_NAME* $DIR_NAME
-  javac $DIR_NAME/$JAVA_FILE
+  javac -g $DIR_NAME/$JAVA_FILE
   java $JAVA_OPTS -cp $DIR_NAME $CLASS_NAME
 }
 
