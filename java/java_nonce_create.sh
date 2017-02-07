@@ -138,11 +138,11 @@ function main()
   TIMES="$2"
   A="$3"
   check_if_entered_name $A
-  FIRST_NAME="nonce1" 
+  FIRST_NAME="Nonce1" 
 # FIRST_NAME=$CURRENT_NAME
   option $OPTION
 
-  sed -ie "s/nonce1/$CURRENT_NAME/g" $JAVA_FILE
+  sed -ie "s/Nonce1/$CURRENT_NAME/g" $JAVA_FILE
   for i in `seq 1 $TIMES`;
   do
     echo run number: $i
